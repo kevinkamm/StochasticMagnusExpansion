@@ -8,16 +8,17 @@ clear;gpuDevice(1);
 %       $\verb+t0+=t_{1}\leq \dots \leq t_{N}=\verb+T+$
 % time scale: fix N_1 for T=1 to 1000, 10000
 %   then: N_t= ceil(1000* t),ceil(10000 * t)
-Delta=1/1000;
-Delta_fine=1/10000;
+Delta=10^(-4);
+Delta_fine=10^(-4);
 param.t0=0;
 param.T=1;
+%(param.N_fine-1)/(param.N-1)\in \mathbb{N}! 
 param.N_fine=ceil(Delta_fine^(-1)*param.T);
 param.N=ceil(Delta^(-1)*param.T);
 %%
 % # sample paths of Brownian motion $\verb+M+\in\bf{N}$
-param.M_fine=1000;
-param.M=1000;
+param.M_fine=10^4;
+param.M=10^4;
 %%
 % # spatial domain:
 %%
