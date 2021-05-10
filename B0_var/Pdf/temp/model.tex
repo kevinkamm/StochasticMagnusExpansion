@@ -1,0 +1,27 @@
+We will concern ourselves with the following SDE:
+\begin{align*}
+	 dX_t = A_t X_t dW_t
+\end{align*}
+with
+\begin{align*}
+A_t=
+\left[
+\begin{array}[c]{cc}
+f^{11}(t) & f^{12}(t)\\
+0 & f^{22}(t)
+\end{array}
+\right]
+\end{align*}
+Here we chose:
+\begin{align*}
+A_t=\frac{\tilde{A}_t}{\sigma(\tilde{A}_t)},\end{align*}
+where $\sigma(A_t)$ is the spectral radius and 
+\begin{align*}
+\tilde{A}_t=
+\left[
+\begin{array}[c]{cc}
+2 & t\\
+0 & -1
+\end{array}
+\right]
+\end{align*}
