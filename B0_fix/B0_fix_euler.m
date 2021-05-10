@@ -52,13 +52,12 @@ function X=euler_step(X,A,dW)
 end
 function Z=mult(X,A,comp_device)
     switch comp_device
-        case 'gpu'
+        case {'gpu'}
             Z=pagefun(@mtimes,A,X); 
+        case {'cpu'}
+            Z=pagemtimes(A,X);
         otherwise
-            Z=zeros(size(X));
-            for j=1:1:size(X,4)
-                Z(:,:,1,j)=A*X(:,:,1,j);
-            end
+            error('Unknown device')
     end
 end
 % function Z=mult(X,lower,main,upper,comp_device)
